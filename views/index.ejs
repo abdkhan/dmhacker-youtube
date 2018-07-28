@@ -78,10 +78,10 @@
                 <div class="card">
                     <div class="card-content red-text">
                         <span class="card-title">YouTube Search</span>
-                        <form ng-submit="searchView()">
+                        <form ng-app="myApp" ng-controller="formCtrl" ng-submit="searchView()">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input ng-model="ytSearch" id="ytSearch" type="hidden" ng-value="WDkg3h8PCVU" class="validate" required>
+                                    <input ng-model="ytSearch" id="ytSearch" type="text" class="validate" required>
                                     <label for="ytSearch">Search Query</label>
                                 </div>
                             </div>
@@ -95,6 +95,13 @@
                 </div>
             </div>
         </div>
+        
+        <script>
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope) {
+    $scope.ytSearch = "WDkg3h8PCVU";
+});
+</script>
         
 </body>
 
