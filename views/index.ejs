@@ -56,28 +56,16 @@
 
 
 <body ng-controller="ProxyController">
-   testing: {{lnk}}
-
+   
       <script>
 
+var app = angular.module('Proxy', []);
+app.controller('ProxyController', function($scope) {
+    var lnk = getUrlVars()["x"];
+     });
 
-angular.module(‘proxy’)
-.controller(‘ProxyController’, function ($scope,$location) {
-//call the parameter json
-$outputJson = $location.search();
-/*
-* Output JSON : result
-* {
-* param1: ‘demovalue1′,
-* param2:’demovalue2’
-* }
-*
-*/
-//get all the value one by one
-var lnk = $location.search().param1;
-
-});
     </script>
+{{lnk}}
    
 
     
