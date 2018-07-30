@@ -32,8 +32,8 @@ app.controller('ProxyController', function($scope, $http, $cookies) {
         });
     };
 
-    $scope.searchView = function() {
-         var query = $scope.mine;
+    $scope.searchView = function(ys) {
+         var query = ys;
         $scope.loading = true;
         $http({
             method: 'GET',
