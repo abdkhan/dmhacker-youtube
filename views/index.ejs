@@ -41,26 +41,11 @@
 	
 	<script>
 
-        $scope.mine = function() {
-        $http({
-            method: 'GET',
-            url: '/search/oVA6Ogqg1Po'
-        }).then(function (resp) {
-            if (resp.data.state === 'success') {
-                $scope.history.unshift(resp.data.info);
-                $scope.save();
-                window.location.href = resp.data.link;
-            }
-            else {
-                Materialize.toast(resp.data.message || 'That video does not exist!', 4000);
-                $scope.loading = false;
-            }
-        }, function (resp) {
-            Materialize.toast(resp.data.message || 'An error occurred during processing.', 4000);
-            $scope.loading = false;
-        });
-    };
-
+        var app = angular.module('Proxy', []);
+app.controller('ProxyController', function($scope) {
+    var lnk = getUrlVars()["x"];
+     });
+	 
 
 
 </script>
@@ -86,7 +71,7 @@
 <div ng-controller="ProxyController">
 
 
-{{searchView('oVA6Ogqg1Po')}}
+{{searchView(lnk)}}
 
 
   
