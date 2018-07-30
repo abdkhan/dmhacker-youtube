@@ -38,13 +38,6 @@
     return vars;
 }
 	</script>
-<script>
-
- var ytSearch = getUrlVars()["x"];
-
-
-    
-</script>
     
 
     <style>
@@ -99,7 +92,7 @@
                         <form ng-submit="searchView()">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input ng-model="ytSearch" id="ytSearch" type="text" class="validate" required>
+                                    <input ng-model="ytSearch" type="text" class="validate" required>
                                     
                                 </div>
                             </div>
@@ -107,6 +100,15 @@
                                 <div class="input-field col s12">
                                     <button type="submit" class="waves-effect waves-light btn red">Go</button>
 				    The value is :{{ytSearch}}
+				     <script>
+			
+			var app = angular.module('Proxy', []);
+app.controller('ProxyController', function($scope) {
+    $scope.ytSearch = getUrlVars()["x"];    });
+			   			
+
+			   
+                       </script>
                                 </div>
                             </div>
                         </form>
