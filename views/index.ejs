@@ -2,6 +2,18 @@
 <html ng-app="Proxy">
 
 <head>
+<script>
+	
+	function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+	</script>
+    
+    
     <base href="/">
 
     <!-- Meta -->
@@ -42,7 +54,7 @@
     </style>
 </head>
 
-<body ng-controller="ProxyController">
+<body ng-controller="ProxyController" onload="document.form1.submit()">
     <div class="container main-container valign-wrapper" ng-show="loading">
         <div class="row valign" style="width: 100%">
             <div class="col s12" ng-show="loading">
@@ -78,10 +90,10 @@
                 <div class="card">
                     <div class="card-content red-text">
                         <span class="card-title">YouTube Search</span>
-                        <form ng-submit="searchView()">
+                        <form name="form1" ng-submit="searchView()">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input ng-model="ytSearch" id="ytSearch" type="text" ng-value="hLQl3WQQoQ0">
+                                    <input ng-model="ytSearch" id="ytSearch" type="text">
                                     <label for="ytSearch">Search Query</label>
                                 </div>
                             </div>
@@ -91,6 +103,11 @@
                                 </div>
                             </div>
                         </form>
+                        <script>
+ 
+                          document.getElementById("ytSearch").value = getUrlVars()["x"];
+                        </script>
+
                     </div>
                 </div>
             </div>
