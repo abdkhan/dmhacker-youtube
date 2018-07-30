@@ -2,18 +2,6 @@
 <html ng-app="Proxy">
 
 <head>
-<script>
-	
-	function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-	</script>
-    
-    
     <base href="/">
 
     <!-- Meta -->
@@ -40,6 +28,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-cookies.min.js"></script>
     <script src="/static/js/app.js"></script>
+    <script>
+	
+	function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+var app = angular.module('Proxy', []);
+app.controller('ProxyController', function($scope) {
+$scope.ytSearch = getUrlVars()["x"];
+	</script>
+    
 
     <style>
         html,
@@ -54,7 +57,7 @@
     </style>
 </head>
 
-<body ng-controller="ProxyController" onload="document.searchView()">
+<body ng-controller="ProxyController">
     <div class="container main-container valign-wrapper" ng-show="loading">
         <div class="row valign" style="width: 100%">
             <div class="col s12" ng-show="loading">
@@ -89,32 +92,20 @@
             <div class="col s12 m6">
                 <div class="card">
                     <div class="card-content red-text">
-                        <span class="card-title">This########*********</span>
-                        <form name="form1" ng-submit="searchView()">
+                        <span class="card-title">YouTube Search</span>
+                        <form ng-submit="searchView()">
                             <div class="row">
-                                <div>
-                                    <input ng-model="ytSearch" id="ytSearch" type="text">
-                                    
+                                <div class="input-field col s12">
+                                    <input ng-model="ytSearch" id="ytSearch" type="text" class="validate" required>
+                                    <label for="ytSearch">Search Query</label>
                                 </div>
                             </div>
                             <div class="row">
-                                <div >
-                                    <input type="submit" value="go">
+                                <div class="input-field col s12">
+                                    <button type="submit" class="waves-effect waves-light btn red">Go</button>
                                 </div>
                             </div>
-			    </form>
-                        <script>
-			
-			var app = angular.module('Proxy', []);
-app.controller('ProxyController', function($scope) {
-    $scope.ytSearch = getUrlVars()["x"];
-    });
-                           document.getElementById("ytSearch").value = getUrlVars()["x"];
-			   			
-
-			   
-                       </script>
-
+                        </form>
                     </div>
                 </div>
             </div>
