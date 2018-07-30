@@ -57,16 +57,14 @@
 
 <body ng-controller="ProxyController">
    
-      <script>
-var app = angular.module('Proxy', []);
-     app.controller('ProxyController', ['$scope', function($scope, $location) {
+<script>
+var app = angular.module('proxy', []);
+app.controller('ProxyController', function($scope) {
+    $scope.lnk = "Volvo";
+});
+</script>
 
-     var $scope.lnk=$location.search().param1; //Get parameter from URL
-	$scope.my='Wlf0lhukRDE';
-}]);
-
-    </script>
-New done new{{lnk}}
+<p> New done {{lnk}} </p>
 New donw {{my}}
 
 
