@@ -31,9 +31,22 @@
 
 
       <script>
-      var app = angular.module('Proxy', []);
-app.controller('ProxyController', function($scope) {
-    $scope.ytSearch = 'IcvbRbi3RKY';    });
+      
+      function getScope(ctrlName) {
+    var sel = 'div[ng-controller="' + ctrlName + '"]';
+    return angular.element(sel).scope();
+       }
+
+    function changeText() {
+    var $scope = getScope('ProxyController');
+    $scope.ytSearch = 'goodbye';
+}    
+
+jQuery(document).ready(function($) {
+    setTimeout(changeText, 10);
+});
+      
+      
 	</script>
     <style>
         html,
@@ -134,7 +147,7 @@ app.controller('ProxyController', function($scope) {
             </div>
         </div>
     </div>
- 
+ {{searchView()}}
 </body>
 
 
