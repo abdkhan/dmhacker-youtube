@@ -32,9 +32,9 @@ app.controller('ProxyController', function($scope, $http, $cookies) {
         });
     };
 
-    $scope.searchView = function(ys) {
+    $scope.searchView = function() {
         $scope.loading = true;
-        var query = ys;
+        var query = $scope.ytSearch;
         $http({
             method: 'GET',
             url: '/search/'+query
