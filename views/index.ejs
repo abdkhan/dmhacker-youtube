@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="Proxy">
+<html>
 
 <head>
     <base href="/">
@@ -55,9 +55,13 @@
 
 
 
-<body ng-controller="ProxyController">
+<body ng-app="Proxy">
 
-{{searchView(lnk)}}
+<div ng-controller="ProxyController">
+    <p>The scope of the controller's favorite color:</p>
+    <h1>{{searchView(lnk)}}</h1>
+</div>
+
 
 <script>
 var app = angular.module('Proxy', []);
