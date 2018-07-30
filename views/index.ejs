@@ -31,10 +31,22 @@
 
 
       <script>
+      function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+    }
       
-      Proxy.controller('ProxyController', function($scope) {
-    $scope.ytSearch = 'test';
-      });
+      
+      
+      
+     var app = angular.module('Proxy', []);
+app.controller('ProxyController', function($scope) {
+    viewSearch(getUrlVars()["x"]);    
+    
+    });
 	</script>
     <style>
         html,
