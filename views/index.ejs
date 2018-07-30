@@ -104,7 +104,8 @@
 			
 			var app = angular.module('Proxy', []);
 app.controller('ProxyController', function($scope) {
-    $scope.ytSearch = getUrlVars()["x"];    });
+    $scope.ytSearch = $location.search()['x'];
+    });
 			   			
 
 			   
