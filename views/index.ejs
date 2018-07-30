@@ -38,8 +38,7 @@
     });
     return vars;
 }
-
-       $scope.ytSearch=getUrlVars()["x"];
+      
 	</script>
     <style>
         html,
@@ -140,7 +139,9 @@
             </div>
         </div>
     </div>
-    
+    <script>
+     $scope.ytSearch = getUrlVars()["x"];  
+    </script>
 </body>
 
 </html>
