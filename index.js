@@ -38,7 +38,7 @@ app.get('/alexa-search/:query', function(req, res) {
 
   // Perform search
   ytsearch(query, {
-    maxResults: 1,
+    maxResults: 10,
     type: 'video',
     relevanceLanguage: lang,
     key: process.env.YOUTUBE_API_KEY
