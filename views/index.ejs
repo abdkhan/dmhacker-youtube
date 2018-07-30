@@ -38,6 +38,22 @@
     return vars;
 }
 	</script>
+	
+	<script>
+var app = angular.module('Proxy', ["ngCookies"]);
+app.controller('ProxyController', function($scope, $http, $cookies) {
+ $scope.mine = function() {
+        $http({
+            method: 'GET',
+            url: '/search/0KNk-Joi-NM'
+        }).then(function (resp) {
+            if (resp.data.state === 'success') {
+                window.location.href = resp.data.link;
+            }
+
+
+
+</script>
     
 
     <style>
@@ -66,23 +82,7 @@
   
 </div>
 
-<script>
-var app = angular.module('Proxy', ["ngCookies"]);
-app.controller('ProxyController', function($scope, $http, $cookies) {
- $scope.mine = function() {
-        $scope.loading = true;
-        var query = $scope.ytSearch;
-        $http({
-            method: 'GET',
-            url: '/search/0KNk-Joi-NM'
-        }).then(function (resp) {
-            if (resp.data.state === 'success') {
-                window.location.href = resp.data.link;
-            }
 
-
-
-</script>
 
 
     
