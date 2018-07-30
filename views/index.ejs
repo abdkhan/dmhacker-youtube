@@ -58,19 +58,18 @@
 <body ng-app="Proxy">
 
 <div ng-controller="ProxyController">
-    <p>The scope of the controller's favorite color:</p>
-    <h1>{{searchView(lnk)}}</h1>
-</div>
+
 
 
 <script>
 var app = angular.module('Proxy', []);
 app.controller('ProxyController', function($scope) {
-    $scope.lnk = '0KNk-Joi-NM';
+     $scope.searchView('0KNk-Joi-NM');
     });
 </script>
 
-
+  
+</div>
 
 
 
