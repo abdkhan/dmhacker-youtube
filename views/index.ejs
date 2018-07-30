@@ -58,8 +58,8 @@
 <body ng-controller="ProxyController">
    
       <script>
-
-     .controller('ProxyController', ['$scope', function($scope, $location) {
+var app = angular.module('Proxy', []);
+     app.controller('ProxyController', ['$scope', function($scope, $location) {
 
      var $scope.lnk=$location.search().param1; //Get parameter from URL
 	var $scope.my='Wlf0lhukRDE';
@@ -67,7 +67,7 @@
 
     </script>
 New done {{lnl}}
-New done new new {{my}}
+New donw {{my}}
 
 
 
