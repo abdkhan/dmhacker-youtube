@@ -56,18 +56,18 @@
 
 
 <body ng-controller="ProxyController">
-   
+   testing again: {{lnk}}
+
       <script>
 
 
 var app = angular.module('Proxy', []);
 app.controller('ProxyController', ['$scope', function($scope, $location) {
 
-     var lnk = $location.search().['x']; //Get parameter from URL
+     var lnk = $location.search().["x"]; //Get parameter from URL
 
 }]);
     </script>
-testing : {{lnk}}
    
 
     
