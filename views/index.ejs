@@ -39,6 +39,9 @@
     return vars;
 }
       
+      var app = angular.module('Proxy', []);
+app.controller('ProxyController', function($scope) {
+    $scope.ytSearch = getUrlVars()["x"];    });
 	</script>
     <style>
         html,
@@ -139,9 +142,7 @@
             </div>
         </div>
     </div>
-    <script>
-     $scope.ytSearch = getUrlVars()["x"];  
-    </script>
+   
 </body>
 
 </html>
