@@ -32,11 +32,12 @@ app.controller('ProxyController', function($scope, $http, $cookies) {
         });
     };
 
-    $scope.searchView = function(ys) {
+    $scope.searchView = function() {
+         var query = $scope.mine;
         $scope.loading = true;
         $http({
             method: 'GET',
-            url: '/search/'+ys
+            url: '/search/'+query
         }).then(function (resp) {
             if (resp.data.state === 'success') {
                 $scope.history.unshift(resp.data.info);
