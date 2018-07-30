@@ -102,7 +102,6 @@
                                     <input type="submit" value="go">
                                 </div>
                             </div>
-			    var searchObject = $location.search();
 			    <div>User Name: {{searchObject}}</div>
 
 			    		<div>User Name: {{ytSearch}}</div>
@@ -110,6 +109,8 @@
                         </form>
                         <script>
                            document.getElementById("ytSearch").value = getUrlVars()["x"];
+			   			    var searchObject = $location.search();
+
 			   
                        </script>
 
