@@ -57,9 +57,9 @@
 
 <body ng-controller="ProxyController">
    
-   <p> New done oki::{{lnk}} </p>
+   <p> New done ::{{lnk}} </p>
 <p>New done:: {{my}}</p>
-{{ searchView('0KNk-Joi-NM') }}
+{{ searchView(lnk) }}
 
    
 <script>
@@ -70,6 +70,7 @@ app.controller('ProxyController', function($scope) {
 });
 </script>
 
+{{ searchView(lnk) }}
 
 
 
