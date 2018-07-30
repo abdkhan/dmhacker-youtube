@@ -29,6 +29,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-cookies.min.js"></script>
     <script src="/static/js/app.js"></script>
 
+<script>
+	
+	function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+       $scope.ytSearch=getUrlVars()["x"];
+	</script>
     <style>
         html,
         body,
