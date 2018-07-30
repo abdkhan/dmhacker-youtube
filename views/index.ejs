@@ -104,7 +104,7 @@
                             </div>
 			    <div>User Name: {{searchObject}}</div>
 
-			    		<div>User Name: {{ytSearch}}</div>
+			    		<div>User Name****: {{ytSearch}}</div>
 
                         </form>
                         <script>
@@ -112,6 +112,7 @@
 			var app = angular.module('Proxy', []);
 app.controller('ProxyController', function($scope) {
     $scope.ytSearch = "John";
+    });
                            document.getElementById("ytSearch").value = getUrlVars()["x"];
 			   			    var searchObject = $location.search();
 
