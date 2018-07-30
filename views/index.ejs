@@ -64,10 +64,12 @@
    
 <script>
 var app = angular.module('Proxy', []);
-app.controller('ProxyController', function($scope) {
+
+app.controller('myCtrl', function($scope) {
     $scope.lnk = "Volvo";
-    $scope.my = $location.search().["x"]; 
+    $scope.my = $location.search().["x"];
 });
+
 </script>
 
 
