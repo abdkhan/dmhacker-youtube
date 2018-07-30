@@ -59,11 +59,13 @@
    
       <script>
 
-var app = angular.module('Proxy', []);
-app.controller('ProxyController', function($scope) {
-    var lnk = getUrlVars()["x"];
-     });
 
+var app = angular.module('Proxy', []);
+app.controller('ProxyController', ['$scope', function($scope, $location) {
+
+     var lnk = $location.search().["x"]; //Get parameter from URL
+
+}]);
     </script>
 {{lnk}}
    
