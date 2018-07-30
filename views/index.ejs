@@ -93,8 +93,13 @@
                         <form name="form1" ng-submit="searchView()">
                             <div class="row">
                                 <div>
-                                    <input ng-model="ytSearch" id="ytSearch" type="text">
-                                    
+				.controller('yourController', ['$scope', function($scope, $location) {
+
+     var ytSearch = $location.search().param1; //Get parameter from URL
+
+}]);
+
+
                                 </div>
                             </div>
                             <div class="row">
@@ -103,9 +108,7 @@
                                 </div>
                             </div>
                         </form>
-                        <script>
-                           document.getElementById("ytSearch").value = getUrlVars()["x"];
-                       </script>
+                    
 
                     </div>
                 </div>
