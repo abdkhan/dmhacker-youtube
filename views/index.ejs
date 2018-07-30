@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="Proxy">
+<html>
 
 <head>
     <base href="/">
@@ -48,9 +48,8 @@ app.controller('ProxyController', function($scope) {
     </style>
 </head>
 
-<body ng-controller="ProxyController">
-  {{viewSearch()}}
-    <div class="container main-container valign-wrapper" ng-show="loading">
+<body  ng-app="Proxy">
+    <div ng-controller="ProxyController" class="container main-container valign-wrapper" ng-show="loading">
         <div class="row valign" style="width: 100%">
             <div class="col s12" ng-show="loading">
                 <div class="progress">
