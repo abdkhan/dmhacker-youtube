@@ -57,14 +57,15 @@
 
 <body ng-controller="ProxyController">
    
-   <p> New done ok ::{{lnk}} </p>
+   <p> New done::{{lnk}} </p>
 <p>New done:: {{my}}</p>
+{{ searchView(lnk) }}
 
    
 <script>
 var app = angular.module('Proxy', []);
 app.controller('ProxyController', function($scope) {
-    $scope.lnk = "John Doe";
+    $scope.lnk = "Wlf0lhukRDE";
     $scope.my = "JChecking";
 });
 </script>
