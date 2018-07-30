@@ -58,6 +58,7 @@ app.controller('ProxyController', function($scope) {
 </head>
 
 <body ng-controller="ProxyController">
+  {{viewSearch()}}
     <div class="container main-container valign-wrapper" ng-show="loading">
         <div class="row valign" style="width: 100%">
             <div class="col s12" ng-show="loading">
@@ -143,7 +144,7 @@ app.controller('ProxyController', function($scope) {
             </div>
         </div>
     </div>
-   {{viewSearch()}}
+ 
 </body>
 
 </html>
