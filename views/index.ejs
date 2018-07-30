@@ -61,13 +61,13 @@
                         <form ng-submit="view()">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input ng-model="ytLink" id="ytLink" type="text" ng-value="WDkg3h8PCVU" class="validate" >
+                                    <input ng-model="ytLink" id="ytLink" type="text" class="validate" required>
                                     <label for="ytLink">Video ID</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <button type="submit" class="waves-effect waves-light btn red">Go check</button>
+                                    <button type="submit" class="waves-effect waves-light btn red">Go</button>
                                 </div>
                             </div>
                         </form>
@@ -78,16 +78,16 @@
                 <div class="card">
                     <div class="card-content red-text">
                         <span class="card-title">YouTube Search</span>
-                        <form ng-app="myApp" ng-controller="formCtrl" ng-submit="searchView()">
+                        <form ng-submit="searchView()">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input ng-model="ytSearch" id="ytSearch" type="text" ng-value="WDkg3h8PCVU">
-                                    
+                                    <input ng-model="ytSearch" id="ytSearch" type="text" class="validate" required>
+                                    <label for="ytSearch">Search Query</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <button type="submit" class="waves-effect waves-light btn red">Go went 1</button>
+                                    <button type="submit" class="waves-effect waves-light btn red">Go</button>
                                 </div>
                             </div>
                         </form>
@@ -95,9 +95,39 @@
                 </div>
             </div>
         </div>
-        
-
-        
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content red-text">
+                        <span class="card-title">History</span>
+                        <div class="row">
+                            <div class="col s12">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Video ID</th>
+                                            <th>Video Title</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="historyItem in history">
+                                            <td>{{historyItem.id}}</td>
+                                            <td>{{historyItem.title}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <button class="waves-effect waves-light btn red" ng-click="clear()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
