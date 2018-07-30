@@ -32,21 +32,9 @@
 
       <script>
       
-      function getScope(ctrlName) {
-    var sel = 'div[ng-controller="' + ctrlName + '"]';
-    return angular.element(sel).scope();
-       }
-
-    function changeText() {
-    var $scope = getScope('ProxyController');
-    $scope.ytSearch = 'goodbye';
-}    
-
-jQuery(document).ready(function($) {
-    setTimeout(changeText, 10);
-});
-      
-      
+      controller('ProxyController', function($scope) {
+    $scope.ytSearch = 'test';
+      });
 	</script>
     <style>
         html,
