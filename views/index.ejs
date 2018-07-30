@@ -43,7 +43,7 @@
 
         var app = angular.module('Proxy', []);
 app.controller('ProxyController', function($scope) {
-    var lnk = getUrlVars()["x"];
+    $scope.lnk = getUrlVars()["x"];
      });
 	 
 
