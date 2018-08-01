@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="Proxy">
+<html>
 
 <head>
     <base href="/">
@@ -29,21 +29,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-cookies.min.js"></script>
     <script src="/static/js/app.js"></script>
 
-
-      <script>
-      function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-    }
-      
-      
-      
-
-
-	</script>
     <style>
         html,
         body,
@@ -57,12 +42,30 @@
     </style>
 </head>
 
-<body ng-controller="ProxyController">
-    
-    
-    {{viewSearch('e2WOdRaf5NY')}}
+<body ng-app="Proxy" ng-controller="ProxyController">
 
+    <div class="container main-container valign-wrapper" ng-show="loading">
+        <div class="row valign" style="width: 100%">
+            <div class="col s12" ng-show="loading">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+	
+<script>
+
+	var app = angular.module('Proxy', []);
+	app.controller('ProxyController', function($scope) {
+    $scope.ytSearch= 'Tara Ghata';
+	$scope.searchView();
+	});
+	
+	
+</script>
 </body>
-
+</body>
 
 </html>
